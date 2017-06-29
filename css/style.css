@@ -1,0 +1,297 @@
+* {
+  box-sizing: border-box;
+}
+
+.die-value-1, .die-value-2, .die-value-3, .die-value-4, .die-value-5, .die-value-6 {
+  background: url("http://xnafan.net/wp-content/uploads/2012/07/dice_thumb1.png") no-repeat;
+  background-size: 347px 59px;
+  height: 57px;
+  width: 57px;
+  background-position-y: -4px;
+  border: 3px solid transparent;
+  border-radius: 20px;
+  position: relative;
+}
+
+.score .upper-total, .score .final-score, .score .bonus {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.score .upper-total span, .score .final-score span, .score .bonus span {
+  background-color: #444;
+  color: #fff;
+}
+
+.button.no, .button.restart {
+  background: #c64141;
+  color: #fff;
+}
+.button.no:hover, .button.restart:hover {
+  background: #7c2525;
+}
+
+.hold {
+  border: 3px solid rgba(93, 178, 87, 0.7);
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game {
+  text-align: center;
+  width: 50%;
+}
+
+.onboarding {
+  position: relative;
+}
+
+.tooltip {
+  visibility: hidden;
+  cursor: pointer;
+  width: 300px;
+  min-height: 50px;
+  background: #00a816;
+  color: #fff;
+  padding: 1.5em;
+  border-radius: 5px;
+  text-align: center;
+  position: absolute;
+  z-index: 2000;
+  letter-spacing: 1px;
+}
+.tooltip:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #00a816;
+  border-width: 20px;
+  margin-left: -20px;
+}
+
+.tooltip-1 {
+  top: -5%;
+  left: 30%;
+}
+
+.tooltip-2 {
+  top: -40%;
+  left: 13%;
+}
+
+.tooltip-3 {
+  top: 0px;
+  left: 18%;
+}
+
+.tooltip-4 {
+  top: 45%;
+  left: 30%;
+}
+
+.tooltip-5 {
+  top: 26%;
+  left: -18%;
+}
+
+.tooltip-6 {
+  top: 26%;
+  right: 20%;
+}
+
+.button {
+  padding: 15px 20px;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  background: #129ff8;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.button:hover {
+  background: #0682d1;
+}
+.button.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.button.yes {
+  background: #00a816;
+  color: #fff;
+}
+.button.yes:hover {
+  background: #004209;
+}
+
+.output {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.dice {
+  display: inline-block;
+  color: white;
+  color: transparent;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.die-value-1 {
+  background-position-x: -3px;
+}
+
+.die-value-2 {
+  background-position-x: -61px;
+}
+
+.die-value-3 {
+  background-position-x: -119px;
+}
+
+.die-value-4 {
+  background-position-x: -177px;
+}
+
+.die-value-5 {
+  background-position-x: -235px;
+}
+
+.die-value-6 {
+  background-position-x: -293px;
+}
+
+.rolls-left {
+  margin: 20px 0;
+  font-size: 18px;
+}
+.rolls-left span {
+  margin-left: 6px;
+}
+
+.score {
+  padding: 20px;
+  background: #ddd;
+  width: 50%;
+  position: relative;
+}
+.score a {
+  text-decoration: none;
+  color: #000;
+}
+.score ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.score ul div {
+  width: 45%;
+}
+.score li {
+  list-style: none;
+  padding: 10px 0;
+  border-bottom: 1px solid #222;
+  position: relative;
+}
+.score span {
+  position: absolute;
+  background: #fff;
+  padding: 5px 10px;
+  right: 0;
+  top: 4px;
+  bottom: 4px;
+  left: 75%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.score span.saving {
+  background-color: #00a816;
+}
+.score span.saved {
+  background-color: #129ff8;
+}
+.score .bonus-roll-wrapper {
+  position: absolute;
+  background: rgba(63, 191, 191, 0.9);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  text-align: center;
+}
+.score .bonus-roll {
+  padding: 2em;
+}
+
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 90;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal-wrapper {
+  position: absolute;
+  z-index: 120;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.modal {
+  text-align: center;
+}
+.modal .button {
+  display: inline-block;
+}
+.modal .button:first-of-type {
+  margin-right: 20px;
+}
