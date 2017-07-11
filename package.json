@@ -1,0 +1,24 @@
+{
+  "name": "yahtzee",
+  "version": "1.0.0",
+  "description": "Yahtzee web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizkaraffa/yahtzee.git"
+  },
+  "author": "Liz Karaffa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizkaraffa/yahtzee/issues"
+  },
+  "homepage": "https://github.com/lizkaraffa/yahtzee#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
