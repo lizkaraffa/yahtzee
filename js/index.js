@@ -501,6 +501,15 @@ window.Yahtzee = window.Yahtzee || {};
 		$(".wrapper").append(html);
 	}
 
+	function bonus_score_info() {
+		app.$.bonus_score_info.click(function(event) {
+		  	event.preventDefault();
+			app.$.bonus_score_modal.css('display', 'block');
+			app.$.overlay.css('display', 'block');
+			close_modal();
+		});
+	}
+
 	function end_game() {
 		$('#finish-game .button').off().on("click", function() {
 			$('.overlay').remove();
@@ -593,6 +602,7 @@ window.Yahtzee = window.Yahtzee || {};
 		printHTML( diceHTML() );
 		start_game();
 		show_scoring_info();
+		bonus_score_info();
 
 		let timeout = null;
 

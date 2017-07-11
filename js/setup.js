@@ -33,7 +33,8 @@ window.Yahtzee = window.Yahtzee || {};
 		app.$.custom_message = $('.custom-message');
 		app.$.overlay = $('.overlay');
 		app.$.bonus_roll_modal = $('.bonus-roll-wrapper');
-
+		app.$.bonus_score_modal = $('#bonus-score');
+		app.$.bonus_score_info = $('.bonus-score-info');
 	};
 
 	app.$get = function( selectorString ) {
