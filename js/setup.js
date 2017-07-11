@@ -29,6 +29,11 @@ window.Yahtzee = window.Yahtzee || {};
 		app.$.leftTooltip = $('.onboarding .tooltip');
 		app.$.rightTooltip = $('.score .tooltip');
 		app.$.only_scores = app.$.scores.not(app.$.upper_total).not(app.$.bonus).not(app.$.final);
+		app.$.finish_game_modal = $('#finish-game');
+		app.$.custom_message = $('.custom-message');
+		app.$.overlay = $('.overlay');
+		app.$.bonus_roll_modal = $('.bonus-roll-wrapper');
+
 	};
 
 	app.$get = function( selectorString ) {

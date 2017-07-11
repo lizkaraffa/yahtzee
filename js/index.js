@@ -413,125 +413,71 @@ window.Yahtzee = window.Yahtzee || {};
 		return total;
 	}
 
-	//Creates HTML if a bonus roll occurs for an extra yahtzee
+	//Shows Bonus Roll Modal if there is another yahtzee
 	function bonus_roll_html() {
-		let html = '<div class="bonus-roll-wrapper">';
-		html += '<div class="bonus-roll">';
-		html += "<h2>You got an extra Yahtzee!</h2>";
-		html += "<p>You get an extra roll too.</p>";
-		html += "<p>(click this box to close)</p>";
-		html += "</div>";
-		html += "</div>";
-		$(".score").append(html);
+		app.$.bonus_roll_modal.css('display','block');
 	}
 
-	//Creates Welcome message
-	function welcome_html() {
-		let html = '<div class="overlay"></div>';
-		html += '<div class="modal-wrapper">';
-		html += '<div class="modal" id="welcome">';
-		html += "<h2>Welcome to Yahtzee!</h2>";
-		html += "<p>Do you need instructions to use this app?</p>";
-		html += "<div class='button yes'>Yes</div>";
-		html += "<div class='button no'>No</div>";
-		html += "</div>";
-		html += "</div>";
-		$(".wrapper").append(html);
-	}
-
-	//Creates HTML for the end of the game.
+	//Shows modal and custom message for end of game.
 	function finish_game_html() {
-		let html = '<div class="overlay"></div>';
-		html += '<div class="modal-wrapper">';
-		html += '<div class="modal" id="finish-game">';
-		html += '<h2>Congratulations!</h2>';
-		html += '<p>You scored ' + final_score() + ' points!</p>';
-		html += '<p>Would you like to play again?</p>';
-		html += '<div class="button yes">Yes</div>';
-		html += '<div class="button no">No</div>';
-		html += '</div>';
-		html += '</div>';
-		$(".wrapper").append(html);
+		$c.finish_game_modal.css('display', 'block');
+		$c.overlay.css('display', 'block');
+		let message = 'You scored ' + final_score() + ' points!';
+		app.$.custom_message.append(message);
 	}
 
 	function scoring_info_html( i, data ) {
 		let score = i;
 		let scoring_info = [
 		{
-			title: 'Ones',
-			instructions: 'Ones sums up only the dice that are a one.',
 			die_values: '<div class="dice die-value-1"></div><div class="dice die-value-1"></div><div class="dice die-value-1"></div><div class="dice die-value-5"></div><div class="dice die-value-1"></div>',
 			score: 4
 		},
 		{
-			title: 'Twos',
-			instructions: 'Twos sums up only the dice that are a two.',
 			die_values: '<div class="dice die-value-2"></div><div class="dice die-value-5"></div><div class="dice die-value-2"></div><div class="dice die-value-4"></div><div class="dice die-value-2"></div>',
 			score: 6
 		},
 		{
-			title: 'Threes',
-			instructions: 'Threes sums up only the dice that are a three.',
 			die_values: '<div class="dice die-value-3"></div><div class="dice die-value-6"></div><div class="dice die-value-3"></div><div class="dice die-value-4"></div><div class="dice die-value-2"></div>',
 			score: 6
 		},
 		{
-			title: 'Fours',
-			instructions: 'Fours sums up only the dice that are a four.',
 			die_values: '<div class="dice die-value-4"></div><div class="dice die-value-1"></div><div class="dice die-value-3"></div><div class="dice die-value-4"></div><div class="dice die-value-4"></div>',
 			score: 12
 		},
 		{
-			title: 'Fives',
-			instructions: 'Fives sums up only the dice that are a five.',
 			die_values: '<div class="dice die-value-5"></div><div class="dice die-value-1"></div><div class="dice die-value-3"></div><div class="dice die-value-4"></div><div class="dice die-value-5"></div>',
 			score: 10
 		},
 		{
-			title: 'Sixes',
-			instructions: 'Sixes sums up only the dice that are a six.',
 			die_values: '<div class="dice die-value-6"></div><div class="dice die-value-2"></div><div class="dice die-value-6"></div><div class="dice die-value-6"></div><div class="dice die-value-5"></div>',
 			score: 18
 		},
 		{
-			title: 'Three of a Kind',
-			instructions: 'lsjflsjflsfj',
 			die_values: '<div class="dice die-value-4"></div><div class="dice die-value-4"></div><div class="dice die-value-2"></div><div class="dice die-value-6"></div><div class="dice die-value-4"></div>',
 			score: 20
 		},
 		{
-			title: 'Four of a Kind',
-			instructions: 'Four of a Kind sums up all the dice so long as at least four dice are the same.',
 			die_values: '<div class="dice die-value-5"></div><div class="dice die-value-5"></div><div class="dice die-value-5"></div><div class="dice die-value-3"></div><div class="dice die-value-5"></div>',
 			score: 23
 		},
 		{
-			title: 'Full House',
-			instructions: 'Full House scores 25 points if there is both a set of 3 and a set of 2.',
 			die_values: '<div class="dice die-value-4"></div><div class="dice die-value-4"></div><div class="dice die-value-2"></div><div class="dice die-value-2"></div><div class="dice die-value-4"></div>',
 			score: 25
 		},
 		{
-			title: 'Chance',
-			instructions: 'Chance sums up the value of all the dice.',
 			die_values: '<div class="dice die-value-4"></div><div class="dice die-value-1"></div><div class="dice die-value-6"></div><div class="dice die-value-5"></div><div class="dice die-value-4"></div>',
 			score: 20
 		},
 		{
-			title: 'Small Straight',
-			instructions: 'A Small Straight scores 30 points if at least 4 dice are in a straight',
 			die_values: '<div class="dice die-value-5"></div><div class="dice die-value-3"></div><div class="dice die-value-6"></div><div class="dice die-value-5"></div><div class="dice die-value-4"></div>',
 			score: 30
 		},
 		{
-			title: 'Large Straight',
-			instructions: 'A Large Straight scores 40 points if all the dice are in a straight',
 			die_values: '<div class="dice die-value-5"></div><div class="dice die-value-3"></div><div class="dice die-value-1"></div><div class="dice die-value-2"></div><div class="dice die-value-4"></div>',
 			score: 40
 		},
 		{
-			title: 'Yahtzee',
-			instructions: 'A Yahtzee scores 50 points if all the dice are the same. Each additional Yahtzee is worth 100 points.',
 			die_values: '<div class="dice die-value-3"></div><div class="dice die-value-3"></div><div class="dice die-value-3"></div><div class="dice die-value-3"></div><div class="dice die-value-3"></div>',
 			score: 50
 		},
@@ -580,8 +526,8 @@ window.Yahtzee = window.Yahtzee || {};
 
 	function start_game() {
 		$('#welcome .button').off().on("click", function() {
-			$('.overlay').remove();
-			$('.modal-wrapper').remove();
+			$('.overlay').hide();
+			$('.modal-wrapper').hide();
 
 			if( $(this).hasClass('yes') ) {
 				tooltip();
@@ -593,12 +539,12 @@ window.Yahtzee = window.Yahtzee || {};
 
 	function close_modal() {
 		$('.modal-wrapper').on('click', function(){
-			$('.overlay').remove();
-			$('.modal-wrapper').remove();
+			$('.overlay').hide();
+			$('.modal-wrapper').hide();
 		});
 		$('.overlay').on('click', function(){
-			$('.overlay').remove();
-			$('.modal-wrapper').remove();
+			$('.overlay').hide();
+			$('.modal-wrapper').hide();
 		});
 	}
 
@@ -645,7 +591,6 @@ window.Yahtzee = window.Yahtzee || {};
 		$get = app.$get;
 
 		printHTML( diceHTML() );
-		welcome_html();
 		start_game();
 		show_scoring_info();
 

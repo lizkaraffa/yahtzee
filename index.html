@@ -3,55 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <title>Yahtzee</title>
-
-
-
       <link rel="stylesheet" href="css/style.css">
-
-
 </head>
 
 <body>
   <div class="wrapper">
-  <div class="game">
-    <h1>Let's Play Yahtzee!</h1>
-    <div class="onboarding">
-      <div class="output"></div>
-      <div class="tooltip"></div>
-      <div class="button" id="roll-dice">Roll Dice</div>
+    <div class="game">
+      <h1>Let's Play Yahtzee!</h1>
+      <div class="onboarding">
+        <div class="output"></div>
+        <div class="tooltip"></div>
+        <div class="button" id="roll-dice">Roll Dice</div>
 
-      <div class="rolls-left">Rolls left this turn:<span></span></div>
-      <div class="button restart">Restart Game</div>
-     </div>
-  </div>
-  <div class="score">
-    <h2>Score</h2>
-    <div class="tooltip"></div>
-    <ul>
-      <div class="upper-scores">
-        <li class="one"><a href="#" class="scoring-info">One: &#9432;</a><span></span></li>
-        <li class="two"><a href="#" class="scoring-info">Two: &#9432;</a><span></span></li>
-        <li class="three"><a href="#" class="scoring-info">Three: &#9432;</a><span></span></li>
-        <li class="four"><a href="#" class="scoring-info">Four: &#9432;</a><span></span></li>
-        <li class="five"><a href="#" class="scoring-info">Five: &#9432;</a><span></span></li>
-        <li class="six"><a href="#" class="scoring-info">Six: &#9432;</a><span></span></li>
-
-        <li class="upper-total">Upper Score:<span></span></li>
-        <li class="bonus">Bonus:<span></span></li>
-      </div>
-      <div class="bottom-scores">
-        <li class="three-kind" data-instructions="Three of a Kind sums up all the dice so long as at least three dice are the same." data-title="Three of a Kind"><a href="#" class="scoring-info">Three of a Kind: &#9432;</a><span></span></li>
-        <li class="four-kind"><a href="#" class="scoring-info">Four of a Kind: &#9432;</a><span></span></li>
-        <li class="full-house"><a href="#" class="scoring-info">Full House: &#9432;</a><span></span></li>
-        <li class="chance"><a href="#" class="scoring-info">Chance: &#9432;</a><span></span></li>
-        <li class="sml-straight"><a href="#" class="scoring-info">Small Straight: &#9432;</a><span></span></li>
-        <li class="lg-straight"><a href="#" class="scoring-info">Large Straight: &#9432;</a><span></span></li>
-        <li class="yahtzee"><a href="#" class="scoring-info">Yahtzee: &#9432;</a><span></span></li>
-        <li class="final-score">Final Score:<span></span></li>
+        <div class="rolls-left">Rolls left this turn:<span></span></div>
+        <div class="button restart">Restart Game</div>
        </div>
-    </ul>
+    </div>
+    <div class="score">
+      <h2>Score</h2>
+      <div class="tooltip"></div>
+      <ul>
+        <div class="upper-scores">
+          <li class="one" data-title="Ones" data-instructions="Ones sums up only the dice that are a one."><a href="#" class="scoring-info">One: &#9432;</a><span></span></li>
+          <li class="two" data-title="Twos" data-instructions="Twos sums up only the dice that are a two."><a href="#" class="scoring-info">Two: &#9432;</a><span></span></li>
+          <li class="three" data-title="Threes" data-instructions="Threes sums up only the dice that are a three."><a href="#" class="scoring-info">Three: &#9432;</a><span></span></li>
+          <li class="four" data-title="Fours" data-instructions="Fours sums up only the dice that are a four."><a href="#" class="scoring-info">Four: &#9432;</a><span></span></li>
+          <li class="five" data-title="Fives" data-instructions="Fives sums up only the dice that are a five."><a href="#" class="scoring-info">Five: &#9432;</a><span></span></li>
+          <li class="six" data-title="Sixes" data-instructions="Sixes sums up only the dice that are a six."><a href="#" class="scoring-info">Six: &#9432;</a><span></span></li>
+          <li class="upper-total">Upper Score:<span></span></li>
+          <li class="bonus">Bonus:<span></span></li>
+        </div>
+        <div class="bottom-scores">
+          <li class="three-kind" data-title="Three of a Kind" data-instructions="Three of a Kind sums up all the dice so long as at least three dice are the same."><a href="#" class="scoring-info">Three of a Kind: &#9432;</a><span></span></li>
+          <li class="four-kind" data-title="Four of a Kind" data-instructions="Four of a Kind sums up all the dice so long as at least four dice are the same."><a href="#" class="scoring-info">Four of a Kind: &#9432;</a><span></span></li>
+          <li class="full-house" data-title="Full House" data-instructions="Full House scores 25 points if there is both a set of 3 and a set of 2."><a href="#" class="scoring-info">Full House: &#9432;</a><span></span></li>
+          <li class="chance" data-title="Chance" data-instructions="Chance sums up the value of all the dice."><a href="#" class="scoring-info">Chance: &#9432;</a><span></span></li>
+          <li class="sml-straight" data-title="Small Straight" data-instructions="A Small Straight scores 30 points if at least 4 dice are in a straight."><a href="#" class="scoring-info"><a href="#" class="scoring-info">Small Straight: &#9432;</a><span></span></li>
+          <li class="lg-straight" data-title="Large Straight" data-instructions="A Large Straight scores 40 points if all the dice are in a straight."><a href="#" class="scoring-info">Large Straight: &#9432;</a><span></span></li>
+          <li class="yahtzee" data-title="Yahtzee" data-instructions="A Yahtzee scores 50 points if all the dice are the same. Each additional Yahtzee is worth 100 points and affords you a bonus roll."><a href="#" class="scoring-info">Yahtzee: &#9432;</a><span></span></li>
+          <li class="final-score">Final Score:<span></span></li>
+         </div>
+      </ul>
+      <div class="bonus-roll-wrapper" style="display: none">
+        <div class="bonus-roll">
+          <h2>You got an extra Yahtzee!</h2>
+          <p>You get an extra roll too.</p>
+          <p>(click this box to close)</p>
+        </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+    <div id="finish-game" class="modal-wrapper" style="display: none">
+      <div class="modal">
+        <h2>Congratulations!</h2>
+        <p class="custom-message"></p>
+        <p>Would you like to play again?</p>
+        <div class="button yes">Yes</div>
+        <div class="button no">No</div>
+      </div>
+    </div>
+    <div id="welcome" class="modal-wrapper">
+      <div class="modal">
+        <h2>Welcome to Yahtzee!</h2>
+        <p>Do you need instructions to use this app?</p>
+        <div class='button yes'>Yes</div>
+        <div class='button no'>No</div>
+      </div>
+    </div>
   </div>
-</div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
     <script src="js/setup.js"></script>
