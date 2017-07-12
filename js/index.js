@@ -558,17 +558,6 @@ window.Yahtzee = window.Yahtzee || {};
 	}
 
 	function show_scoring_info() {
-		// let scores_instructions = [
-		//   '.one a',
-		//   '.two a',
-		//   '.three a',
-		// ];
-		// for( var i=0; i<3; i++ ) {
-		//   $(document).on( 'click', scores_instructions[i], function(){
-		//    scoring_info_html(i);
-		//    close_modal();
-		//   });
-		// }
 		let selectors = {
 			'.one a' : 0,
 			'.two a' : 1,
