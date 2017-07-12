@@ -748,8 +748,4 @@ window.Yahtzee = window.Yahtzee || {};
 
 	$( app.init );
 
-	//To Do
-	// - Refactor
-	// - Play with shake animation some more
-	// - Have shake repeat every 8 secs not moved, not just the first 8
 } )( window, document, jQuery, window.Yahtzee );
