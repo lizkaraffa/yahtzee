@@ -39,14 +39,23 @@
   width: 100%;
   margin: 0 auto;
   font-family: sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+@media screen and (min-width: 750px) {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .game {
   text-align: center;
-  width: 50%;
+  width: 100%;
+}
+@media screen and (min-width: 750px) {
+  .game {
+    width: 50%;
+  }
 }
 
 .onboarding {
@@ -209,8 +218,13 @@
 .score {
   padding: 20px;
   background: #ddd;
-  width: 50%;
   position: relative;
+  width: 100%;
+}
+@media screen and (min-width: 550px) {
+  .score {
+    width: 50%;
+  }
 }
 .score a {
   text-decoration: none;

@@ -13,14 +13,20 @@
   width: 100%;
   margin: 0 auto;
   font-family: sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @media screen and (min-width: $sml-tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .game {
   text-align: center;
-  width: 50%;
+  width: 100%;
+  margin-bottom: 2em;
+  @media screen and (min-width: $sml-tablet) {
+    width: 50%;
+  }
 }
 .onboarding {
   position: relative;
@@ -85,17 +91,20 @@
 }
  
 .button {
-  padding: 15px 20px;
+  padding: 8px 10px
   max-width: 300px;
   margin: 0 auto;
   border-radius: 10px;
   text-transform: uppercase;
   text-align: center;
-  font-size: 1.5em;
   font-weight: 700;
   background: $blue;
   cursor: pointer;
   letter-spacing: 1px;
+  @media screen and (min-width: $sml-tablet) {
+    padding: 15px 20px;
+    font-size: 1.5em;
+  }
   &:hover {
     background: darken($blue, 10%);
   }
@@ -197,8 +206,11 @@
 .score {
   padding: 20px;
   background: $lightgrey;
-  width: 50%;
   position: relative;
+  width: 100%;
+  @media screen and (min-width: $sml-tablet) {
+    width: 50%;
+  }
   a {
     text-decoration: none;
     color: $black;
