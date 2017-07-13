@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 		autoprefixer: {
             dist: {
                 files: {
-                    'build/style.css': 'style.css'
+                    'build/css/style.css': 'css/style.css'
                 }
             }
         },
