@@ -16,12 +16,6 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
-		watch: {
-			css: {
-				files: '**/*.scss',
-				tasks: ['sass']
-			}
-		},
 		concat: {   
 		    dist: {
 		        src: [
@@ -30,10 +24,31 @@ module.exports = function(grunt) {
 		        ],
 		        dest: 'js/production.js',
 		    }
+		},
+		autoprefixer: {
+            dist: {
+                files: {
+                    'build/style.css': 'style.css'
+                }
+            }
+        },
+		watch: {
+			css: {
+				files: '**/*.scss',
+				tasks: ['sass', 'autoprefixer']
+			},
+			scripts: {
+		        files: ['js/*.js'],
+		        tasks: ['concat'],
+		        options: {
+		            spawn: false,
+		        },
+		    } 
 		}
 	});
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.registerTask('default',['watch']);
 }
