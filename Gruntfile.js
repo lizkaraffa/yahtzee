@@ -32,6 +32,12 @@ module.exports = function(grunt) {
                 }
             }
         },
+        uglify: {
+	    	build: {
+		        src: 'js/production.js',
+		        dest: 'js/production.min.js'
+		    }
+		},
 		watch: {
 			css: {
 				files: '**/*.scss',
@@ -39,7 +45,7 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 		        files: ['js/*.js'],
-		        tasks: ['concat'],
+		        tasks: ['concat', 'uglify'],
 		        options: {
 		            spawn: false,
 		        },
@@ -50,5 +56,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.registerTask('default',['watch']);
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.registerTask('default',['sass', 'concat', 'autoprefixer', 'uglify']);
 }
