@@ -21,9 +21,19 @@ module.exports = function(grunt) {
 				files: '**/*.scss',
 				tasks: ['sass']
 			}
+		},
+		concat: {   
+		    dist: {
+		        src: [
+		        	'js/setup.js',
+		            'js/index.js'      
+		        ],
+		        dest: 'js/production.js',
+		    }
 		}
 	});
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.registerTask('default',['watch']);
 }
