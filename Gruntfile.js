@@ -26,10 +26,11 @@ module.exports = function(grunt) {
 		    }
 		},
 		jshint: {
+			all: ['Gruntfile.js', 'js/*.js'],
 			options: {
 				'esversion' : 6,
 			},
-		    all: ['Gruntfile.js', 'js/*.js']
+			beforeconcat: ['js/setup.js', 'js/index.js'],  
 		},
 		autoprefixer: {
             dist: {
