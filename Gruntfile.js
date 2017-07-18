@@ -25,6 +25,9 @@ module.exports = function(grunt) {
 		        dest: 'js/production.js',
 		    }
 		},
+		jshint: {
+		    all: ['Gruntfile.js', 'js/*.js']
+		},
 		autoprefixer: {
             dist: {
                 files: {
@@ -52,4 +55,4 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.registerTask('default',['sass', 'concat', 'autoprefixer', 'jshint']);
-}
+};
