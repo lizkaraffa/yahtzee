@@ -29,3 +29,22 @@ function single_scores() {
 }
 
 single_scores();
+
+//Start of attempt to make all singles score calculations into one function.
+	app.single_scores = function() {
+		let dieroll = roll;
+		let scores = [];
+		let single_score = 0;
+		for( var n=1, l=6; n<=l; n++ ) {
+			if (dieroll.indexOf(n) != -1) {
+				let roll = $.grep(dieroll, function(v) {
+					return v === n;
+				});
+				for (var i = 0; i < roll.length; i++) {
+					single_score += roll[i];
+				}
+			}
+			scores[n] = single_score;
+		}
+		return scores;
+	};
