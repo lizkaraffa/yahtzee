@@ -26,6 +26,9 @@ module.exports = function(grunt) {
 		    }
 		},
 		jshint: {
+			options: {
+				'esversion' : 6,
+			},
 		    all: ['Gruntfile.js', 'js/*.js']
 		},
 		autoprefixer: {
