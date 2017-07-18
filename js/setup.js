@@ -53,6 +53,6 @@ window.Yahtzee = window.Yahtzee || {};
 
 	app.$dice = function() {
 		return app.$get( '.dice' );
-	}
+	};
 
 } )( window, document, jQuery, window.Yahtzee );

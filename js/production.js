@@ -53,7 +53,7 @@ window.Yahtzee = window.Yahtzee || {};
 
 	app.$dice = function() {
 		return app.$get( '.dice' );
-	}
+	};
 
 } )( window, document, jQuery, window.Yahtzee );
 
@@ -158,26 +158,7 @@ window.Yahtzee = window.Yahtzee || {};
 			score += roll[i];
 		}
 		return score;
-	}
-
-	//Start of attempt to make all singles score calculations into one function.
-	app.single_scores = function() {
-		let dieroll = roll;
-		let scores = [];
-		let single_score = 0;
-		for( var n=1, l=6; n<=l; n++ ) {
-			if (dieroll.indexOf(n) != -1) {
-				let roll = $.grep(dieroll, function(v) {
-					return v === n;
-				});
-				for (var i = 0; i < roll.length; i++) {
-					single_score += roll[i];
-				}
-			}
-			scores[n] = single_score;
-		}
-		return scores;
-	}
+	};
 
 	//Calculate the score for ones
 	app.ones = function() {
@@ -192,7 +173,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for twos
 	app.twos = function() {
@@ -207,7 +188,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for threes
 	app.threes = function() {
@@ -222,7 +203,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for fours
 	app.fours = function() {
@@ -237,7 +218,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for fives
 	app.fives = function() {
@@ -252,7 +233,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for sixes
 	app.sixes = function() {
@@ -267,7 +248,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculates the score for three of a kind
 	app.three_of_kind = function() {
@@ -281,7 +262,7 @@ window.Yahtzee = window.Yahtzee || {};
 		} else {
 			return score;
 		}
-	}
+	};
 
 	//Calculates the score for four of a kind
 	app.four_of_kind = function() {
@@ -295,7 +276,7 @@ window.Yahtzee = window.Yahtzee || {};
 		} else {
 			return score;
 		}
-	}
+	};
 
 	//Calculate the score for a fullhouse
 	app.fullhouse = function() {
@@ -324,7 +305,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculates score for a small straight
 	app.sml_straight = function() {
@@ -334,7 +315,7 @@ window.Yahtzee = window.Yahtzee || {};
 			score = 30;
 		}
 		return score;
-	}
+	};
 
 	//Calculates score for a large straight
 	app.lg_straight = function() {
@@ -344,7 +325,7 @@ window.Yahtzee = window.Yahtzee || {};
 			score = 40;
 		}
 		return score;
-	}
+	};
 
 	function frequency(array) {
 		let frequency = {};
@@ -380,7 +361,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return length;
-	}
+	};
 
 	//Calculates the score for a yahtzee
 	function yahtzee() {

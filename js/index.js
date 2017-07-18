@@ -133,7 +133,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for twos
 	app.twos = function() {
@@ -148,7 +148,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for threes
 	app.threes = function() {
@@ -163,7 +163,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for fours
 	app.fours = function() {
@@ -178,7 +178,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for fives
 	app.fives = function() {
@@ -193,7 +193,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculate the score for sixes
 	app.sixes = function() {
@@ -208,7 +208,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculates the score for three of a kind
 	app.three_of_kind = function() {
@@ -222,7 +222,7 @@ window.Yahtzee = window.Yahtzee || {};
 		} else {
 			return score;
 		}
-	}
+	};
 
 	//Calculates the score for four of a kind
 	app.four_of_kind = function() {
@@ -236,7 +236,7 @@ window.Yahtzee = window.Yahtzee || {};
 		} else {
 			return score;
 		}
-	}
+	};
 
 	//Calculate the score for a fullhouse
 	app.fullhouse = function() {
@@ -265,7 +265,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return score;
-	}
+	};
 
 	//Calculates score for a small straight
 	app.sml_straight = function() {
@@ -275,7 +275,7 @@ window.Yahtzee = window.Yahtzee || {};
 			score = 30;
 		}
 		return score;
-	}
+	};
 
 	//Calculates score for a large straight
 	app.lg_straight = function() {
@@ -285,7 +285,7 @@ window.Yahtzee = window.Yahtzee || {};
 			score = 40;
 		}
 		return score;
-	}
+	};
 
 	function frequency(array) {
 		let frequency = {};
@@ -321,7 +321,7 @@ window.Yahtzee = window.Yahtzee || {};
 			}
 		}
 		return length;
-	}
+	};
 
 	//Calculates the score for a yahtzee
 	function yahtzee() {
